@@ -51,13 +51,13 @@ FROM Etablissement e
 JOIN Propose p ON e.id_etablissement = p.id_etablissement
 GROUP BY e.type_etablissement;
 
--- 10. Nombre total de matières obligatoires par formation
+-- 10. Nombre de matières obligatoires par formation
 SELECT id_formation, COUNT(*) AS nb_matiere_obligatoire
 FROM Enseigne
 WHERE matiere_obligatoire = 1
 GROUP BY id_formation;
 
--- 11. Lister les formations avec leurs établissements et contacts
+-- 11. Lister les formations avec leurs établissements et leurs contacts
 SELECT f.nom_formation, e.nom_etablissement, c.email, c.numero
 FROM Formation f
 JOIN Propose p ON f.id_formation = p.id_formation
@@ -65,7 +65,7 @@ JOIN Etablissement e ON p.id_etablissement = e.id_etablissement
 LEFT JOIN Appartenir a ON e.id_etablissement = a.id_etablissement
 LEFT JOIN Contact c ON a.id_contact = c.id_contact;
 
--- 12. Matières enseignées dans chaque formation avec volume horaire
+-- 12. Matières enseignées dans chaque formation avec le volume horaire
 SELECT f.nom_formation, m.nom_matiere, e.volume_horaire, e.matiere_obligatoire
 FROM Formation f
 JOIN Enseigne e ON f.id_formation = e.id_formation
