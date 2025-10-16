@@ -99,7 +99,7 @@ WHERE p1.taux_insertion > ALL (
     SELECT p2.taux_insertion
     FROM Propose p2
     JOIN Formation f2 ON p2.id_formation = f2.id_formation
-    WHERE f2.domaine_etudes = 'Droit'
+    WHERE f2.domaine_etudes = 'Économie'
 );
 
 
@@ -145,7 +145,7 @@ WHERE EXISTS (
     SELECT 1
     FROM Appartenir a
     JOIN Propose p ON a.id_etablissement = p.id_etablissement
-    WHERE a.id_contact = c.id_contact AND p.taux_reussite > 80
+    WHERE a.id_contact = c.id_contact AND p.taux_reussite > 85
 );
 
 
