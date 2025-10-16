@@ -14,7 +14,7 @@ AND nom_etablissement LIKE '%Université%';
 -- 3. Filtrer les formations avec une durée entre 24 et 36 mois
 SELECT nom_formation, duree_formation, type_formation
 FROM Formation
-WHERE duree_formation BETWEEN 24 AND 36;
+WHERE duree_formation BETWEEN 12 AND 48;
 
 -- 4. Lister les métiers liés à certaines formations clés
 SELECT DISTINCT m.nom_metier
