@@ -20,7 +20,7 @@ WHERE duree_formation BETWEEN 12 AND 48;
 SELECT DISTINCT m.nom_metier
 FROM Metier m
 JOIN Debouche_sur d ON m.id_metier = d.id_metier
-WHERE d.id_formation IN ('F001', 'F008');
+WHERE d.id_formation IN ('F002', 'F009');
 
 -- 5. Afficher les contacts pour des établissements spécifiques
 SELECT e.nom_etablissement, c.email, c.numero
@@ -43,7 +43,7 @@ GROUP BY domaine_etudes;
 SELECT id_etablissement, AVG(taux_reussite) AS moyenne_reussite
 FROM Propose
 GROUP BY id_etablissement
-HAVING AVG(taux_reussite) < 50;
+HAVING AVG(taux_reussite) < 85;
 
 -- 9. Frais de scolarité moyens par type d’établissement
 SELECT e.type_etablissement, AVG(p.frais_scolarite) AS moyenne_frais
