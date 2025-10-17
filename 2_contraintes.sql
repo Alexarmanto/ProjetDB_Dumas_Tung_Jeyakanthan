@@ -36,13 +36,12 @@ ADD CONSTRAINT chk_enseigne_coef_non_negatif CHECK (coefficient_matiere IS NULL 
 ADD CONSTRAINT chk_enseigne_volume_non_negatif CHECK (volume_horaire IS NULL OR volume_horaire >= 0),
 ADD CONSTRAINT chk_enseigne_matiere_obligatoire_bool CHECK (matiere_obligatoire IN (0,1));
 
-ALTER TABLE Debouche_sur
+ALTER TABLE Débouche_sur
 ADD CONSTRAINT chk_debouche_ids_non_nuls CHECK (id_formation IS NOT NULL AND id_metier IS NOT NULL);
 
-ALTER TABLE Appartenir
-ADD CONSTRAINT chk_appartenir_role_non_vide CHECK (role_contact IS NULL OR TRIM(role_contact) <> '');
 
 ALTER TABLE Formation
 ADD CONSTRAINT chk_formation_duree_maximum CHECK (duree_formation IS NULL OR duree_formation <= 120);
+
 
 
