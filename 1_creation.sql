@@ -32,7 +32,7 @@ CREATE TABLE Etablissement(
 
 CREATE TABLE Metier(
    id_metier VARCHAR(50),
-   nom_matiere VARCHAR(50),
+   nom_metier VARCHAR(50),  -- Erreur dans le MCD "nom_matiere"
    secteur_activite VARCHAR(50),
    salaire_moyen INT,
    perspectives_emploi VARCHAR(50),
