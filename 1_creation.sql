@@ -77,7 +77,7 @@ CREATE TABLE Enseigne(
    id_matiere VARCHAR(50),
    coefficient_matiere INT,
    volume_horaire INT,
-   matiere_obligatoire LOGICAL,
+   matiere_obligatoire BOOLEAN,
    PRIMARY KEY(id_formation, id_matiere),
    FOREIGN KEY(id_formation) REFERENCES Formation(id_formation),
    FOREIGN KEY(id_matiere) REFERENCES Matière(id_matiere)
