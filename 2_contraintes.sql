@@ -4,7 +4,7 @@ ADD CONSTRAINT chk_formation_nom_non_vide CHECK (nom_formation IS NOT NULL AND T
 ADD CONSTRAINT chk_formation_duree_non_negative CHECK (duree_formation IS NULL OR duree_formation >= 0),
 ADD CONSTRAINT chk_formation_description_longueur CHECK (description_formation IS NULL OR CHAR_LENGTH(description_formation) <= 2000);
 
-ALTER TABLE Matiere
+ALTER TABLE Matière
 ADD CONSTRAINT chk_matiere_nom_non_vide CHECK (nom_matiere IS NOT NULL AND TRIM(nom_matiere) <> ''),
 ADD CONSTRAINT chk_matiere_format_intitule CHECK (nom_matiere REGEXP '^[^ -].+ - [A-Z0-9]{2,10}$');
 
@@ -44,4 +44,5 @@ ADD CONSTRAINT chk_appartenir_role_non_vide CHECK (role_contact IS NULL OR TRIM(
 
 ALTER TABLE Formation
 ADD CONSTRAINT chk_formation_duree_maximum CHECK (duree_formation IS NULL OR duree_formation <= 120);
+
 
