@@ -1,4 +1,5 @@
-
+-- Les contraintes utilisées ne sont pas forcément essentielles, mais nous les avons mis par principe. Les contraintes que nous avons mis initialement dans le fichier création
+-- sont celles que nous considérons importantes.
 ALTER TABLE Formation
 ADD CONSTRAINT chk_formation_nom_non_vide CHECK (nom_formation IS NOT NULL AND TRIM(nom_formation) <> ''),
 ADD CONSTRAINT chk_formation_duree_non_negative CHECK (duree_formation IS NULL OR duree_formation >= 0),
@@ -44,4 +45,5 @@ ADD CONSTRAINT chk_appartenir_role_non_vide CHECK (role_contact IS NULL OR TRIM(
 
 ALTER TABLE Formation
 ADD CONSTRAINT chk_formation_duree_maximum CHECK (duree_formation IS NULL OR duree_formation <= 120);
+
 
